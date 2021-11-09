@@ -6,4 +6,6 @@ Feature: Search click
     Then I click on the second visible link
     And verify that search term is present on the page
     Examples:
-      | search_term |
+      | search_term          |
+      | Selenium with Python |
+      | Selenium with Java   |
