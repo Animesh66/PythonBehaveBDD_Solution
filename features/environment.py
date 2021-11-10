@@ -5,7 +5,7 @@ from Utilities.config_reader import config_reader
 import allure
 
 
-def before_scenario(context):
+def before_scenario(context, driver):
     if config_reader("basic configure", "browser") == "chrome":
         context.driver = webdriver.Chrome(ChromeDriverManager().install())
         context.driver.maximize_window()
@@ -16,7 +16,7 @@ def before_scenario(context):
         context.driver.implicitly_wait(10)
 
 
-def after_scenario(context):
+def after_scenario(context, driver):
     context.driver.quit()
 
 

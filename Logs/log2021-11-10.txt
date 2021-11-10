@@ -1,0 +1,2 @@
+2021-11-10 18:10:53,317 - Base_Page.py:[31] - [INFO] - Typing in an element: search_box_XPATH value entered as : Selenium with Python
+2021-11-10 18:10:59,801 - Base_Page.py:[31] - [INFO] - Typing in an element: search_box_XPATH value entered as : Selenium with Java

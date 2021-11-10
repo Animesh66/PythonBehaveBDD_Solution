@@ -7,7 +7,7 @@ from features.page_objects.Search_Result_Page import SearchResultPage
 @given('I navigate to google.com')
 def step_impl(context):
     context.search = GoogleSearchPage(context.driver)
-    context.search.open_url(config_reader("basic configue", "test_url"))
+    context.search.open_url(config_reader("basic configure", "test_url"))
 
 
 @when('I typed "{search_term}" in the search box')
