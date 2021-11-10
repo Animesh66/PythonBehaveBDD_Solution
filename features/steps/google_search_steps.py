@@ -17,7 +17,7 @@ def step_impl(context, search_term):
 
 @when('click on the search button')
 def step_impl(context):
-    context.driver.click_search_button()
+    context.search.click_search_button()
 
 
 @then('I click on the second visible link')

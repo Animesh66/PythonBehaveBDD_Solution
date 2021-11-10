@@ -1,7 +1,6 @@
 from features.page_objects.Base_Page import BasePage
 
 
-
 class GoogleSearchPage(BasePage):
 
     def __init__(self, driver):
@@ -15,4 +14,3 @@ class GoogleSearchPage(BasePage):
 
     def click_search_button(self):
         self.click("search_button_XPATH")
-
