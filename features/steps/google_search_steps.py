@@ -4,6 +4,7 @@ from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from Utilities.config_reader import config_reader
 
+
 @given('I navigate to google.com')
 def step_impl(context):
     context.driver = webdriver.Chrome(ChromeDriverManager().install())
@@ -13,7 +14,7 @@ def step_impl(context):
 
 
 @when('I typed "{search_term}" in the search box')
-def step_impl(context,search_term):
+def step_impl(context, search_term):
     context.driver.find_element(By.XPATH, "//input[@title='Search']").send_keys(search_term)
 
 
@@ -30,8 +31,6 @@ def step_impl(context):
 
 
 @then('verify that "{search_term}" is present on the page')
-def step_impl(context, search_term ):
+def step_impl(context, search_term):
     assert search_term in context.driver.page_source, "Given search text is present in the website."
     context.driver.quit()
-
-
