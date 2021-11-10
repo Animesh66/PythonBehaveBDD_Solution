@@ -4,7 +4,7 @@ Feature: Search click
     When I typed "<search_term>" in the searchbox
     And click on the search button
     Then I click on the second visible link
-    And verify that search term is present on the page
+    And verify that "<search_term>" is present on the page
     Examples:
       | search_term          |
       | Selenium with Python |

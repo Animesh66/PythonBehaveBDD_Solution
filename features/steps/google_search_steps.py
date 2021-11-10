@@ -25,13 +25,13 @@ def step_impl(context):
 @then('I click on the second visible link')
 def step_impl(context):
     context.search_links = context.driver.find_elements(By.XPATH, "//h3[@class='LC20lb DKV0Md']")
-    context.link = context.search_links[5]
+    context.link = context.search_links[0]
     context.link.click()
 
 
-@then('verify that search term is present on the page')
-def step_impl(context):
-    assert context.search_term in context.driver.page_source, "Given search text is present in the website."
+@then('verify that "{search_term}" is present on the page')
+def step_impl(context, search_term ):
+    assert search_term in context.driver.page_source, "Given search text is present in the website."
     context.driver.quit()
 
 
