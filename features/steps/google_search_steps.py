@@ -2,7 +2,7 @@ from behave import *
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
-
+from Utilities.config_reader import config_reader
 
 @given('I navigate to google.com')
 def step_impl(context):
@@ -12,7 +12,7 @@ def step_impl(context):
     context.driver.maximize_window()
 
 
-@when('I typed "{search_term}" in the searchbox')
+@when('I typed "{search_term}" in the search box')
 def step_impl(context,search_term):
     context.driver.find_element(By.XPATH, "//input[@title='Search']").send_keys(search_term)
 
