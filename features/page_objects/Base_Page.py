@@ -53,3 +53,19 @@ class BasePage:
         action = ActionChains(self.driver)
         action.move_to_element(element).perform()
         log.logger.info("Moving to an element: " + str(locator))
+
+    def click_element(self, element):
+        element.click()
+
+    def search_links(self, locator):
+        if str(locator).endswith("_XPATH"):
+            all_links = self.driver.find_elements_by_xpath(config_reader("locators", locator))
+        elif str(locator).endswith("_CSS"):
+            all_links = self.driver.find_elements_by_css_selector(config_reader("locators", locator))
+        elif str(locator).endswith("_ID"):
+            all_links = self.driver.find_elements_by_id(config_reader("locators", locator))
+        log.logger.info("Search all the links on the page " + str(locator))
+        return all_links
+
+    def verify_search_term(self, search_term):
+        assert search_term in self.driver.page_source, "Search term is not present in the webpage"
