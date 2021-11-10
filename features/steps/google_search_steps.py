@@ -3,34 +3,32 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from Utilities.config_reader import config_reader
+from features.page_objects.Google_Search_Page import GoogleSearchPage
+from features.page_objects.Search_Result_Page import SearchResultPage
 
 
 @given('I navigate to google.com')
 def step_impl(context):
-    context.driver = webdriver.Chrome(ChromeDriverManager().install())
-    context.driver.get("https://www.google.com/")
-    context.driver.implicitly_wait(10)
-    context.driver.maximize_window()
+    context.search = GoogleSearchPage(context.driver)
+    context.search.open_url(config_reader("basic configue", "test_url"))
 
 
 @when('I typed "{search_term}" in the search box')
 def step_impl(context, search_term):
-    context.driver.find_element(By.XPATH, "//input[@title='Search']").send_keys(search_term)
+    context.search.type_search_term(search_term)
 
 
 @when('click on the search button')
 def step_impl(context):
-    context.driver.find_element(By.XPATH, "//div[@class='FPdoLc lJ9FBc']//input[@name='btnK']").click()
+    context.driver.click_search_button()
 
 
 @then('I click on the second visible link')
 def step_impl(context):
-    context.search_links = context.driver.find_elements(By.XPATH, "//h3[@class='LC20lb DKV0Md']")
-    context.link = context.search_links[0]
-    context.link.click()
+    context.result = SearchResultPage(context.driver)
+    context.result.click_result()
 
 
 @then('verify that "{search_term}" is present on the page')
 def step_impl(context, search_term):
-    assert search_term in context.driver.page_source, "Given search text is present in the website."
-    context.driver.quit()
+    context.result.verify_search_term(search_term)

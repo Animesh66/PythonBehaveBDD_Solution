@@ -67,5 +67,4 @@ class BasePage:
         log.logger.info("Search all the links on the page " + str(locator))
         return all_links
 
-    def verify_search_term(self, search_term):
-        assert search_term in self.driver.page_source, "Search term is not present in the webpage"
+
