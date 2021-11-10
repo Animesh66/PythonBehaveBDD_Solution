@@ -1,7 +1,4 @@
 from behave import *
-from selenium import webdriver
-from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 from Utilities.config_reader import config_reader
 from features.page_objects.Google_Search_Page import GoogleSearchPage
 from features.page_objects.Search_Result_Page import SearchResultPage
