@@ -6,3 +6,9 @@
 2021-11-10 18:15:08,171 - Base_Page.py:[31] - [INFO] - Typing in an element: search_box_XPATH value entered as : Selenium with Java
 2021-11-10 18:15:10,807 - Base_Page.py:[22] - [INFO] - Clicking on an element: search_button_XPATH
 2021-11-10 18:15:10,823 - Base_Page.py:[67] - [INFO] - Search all the links on the page search_links_XPATH
+2021-11-10 18:17:05,275 - Base_Page.py:[31] - [INFO] - Typing in an element: search_box_XPATH value entered as : Selenium with Python
+2021-11-10 18:17:06,999 - Base_Page.py:[22] - [INFO] - Clicking on an element: search_button_XPATH
+2021-11-10 18:17:07,015 - Base_Page.py:[67] - [INFO] - Search all the links on the page search_links_XPATH
+2021-11-10 18:17:18,858 - Base_Page.py:[31] - [INFO] - Typing in an element: search_box_XPATH value entered as : Selenium with Java
+2021-11-10 18:17:21,044 - Base_Page.py:[22] - [INFO] - Clicking on an element: search_button_XPATH
+2021-11-10 18:17:21,061 - Base_Page.py:[67] - [INFO] - Search all the links on the page search_links_XPATH
