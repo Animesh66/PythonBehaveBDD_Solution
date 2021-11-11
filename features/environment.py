@@ -5,7 +5,7 @@ from Utilities.config_reader import config_reader
 import allure
 
 
-# This is behave hooks(before_scenario,after_scenario, before_step, after_step, before_all, after_all)
+# This is behave hook(before_scenario,after_scenario, before_step, after_step, before_all, after_all)
 def before_scenario(context, driver):
     if config_reader("basic configure", "browser") == "chrome":
         context.driver = webdriver.Chrome(ChromeDriverManager().install())
