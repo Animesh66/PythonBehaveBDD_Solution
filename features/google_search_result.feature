@@ -1,4 +1,4 @@
-Feature: Search click
+Feature: Google Search click link and verify
   Scenario Outline: Click on the second visible link of google search
     Given I navigate to google.com
     When I typed "<search_term>" in the search box
