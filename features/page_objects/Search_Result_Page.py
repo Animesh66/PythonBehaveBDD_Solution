@@ -1,5 +1,6 @@
 from features.page_objects.Base_Page import BasePage
 
+
 class SearchResultPage(BasePage):
 
     def __init__(self, driver):
@@ -11,8 +12,3 @@ class SearchResultPage(BasePage):
 
     def verify_search_term(self, search_term):
         assert search_term in self.driver.page_source, "Search term is not present in the webpage"
-
-
-
-
-
